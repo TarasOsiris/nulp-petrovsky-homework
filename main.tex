@@ -1,0 +1,35 @@
+\documentclass[a4paper,14pt]{extarticle}
+\usepackage[headsep=5pt,left=3cm,right=1.5cm,top=2cm,bottom=2cm]{geometry}
+
+\usepackage{setup}
+
+\usepackage[sorting=none,
+style=gost-numeric, 
+language=auto, 
+autolang=other,
+backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+\defbibheading{bibliography}[\bibname]{%
+  \section*{\centering #1}%
+  \markboth{#1}{#1}}
+
+\begin{document}
+
+\input{content/titlepage}
+\clearpage
+
+\tableofcontents
+
+\clearpage
+
+\input{content/intro}
+\clearpage
+
+\input{content/chapters.tex}
+
+\clearpage
+% \nocite{*}
+\printbibliography[title={СПИСОК ВИКОРИСТАНОЇ ЛІТЕРАТУРИ}]
+
+\end{document}
